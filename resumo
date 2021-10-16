@@ -1,0 +1,18 @@
+Sistema escolar 
+
+Áreas do sistema:
+Professor, Aluno e direção
+
+Funcionalidades para a área do professor:
+Cadastrar, listar, atualizar e deletar as notas dos alunos
+
+Funcionalidades para a área do aluno:
+Ver suas disciplinas e notas
+
+Funcionalidades para a área do diretor(a):
+Cadastrar, listar, atualizar e deletar as disciplinas escolares;
+adastrar, listar, atualizar e deletar os alunos em suas turmas; 
+Cadastrar, listar, atualizar e deletar a lista de professores;
+Cadastrar, listar, atualizar e deletar eventos escolares;
+
+
