@@ -41,6 +41,44 @@ class Conn:
                 );
             ''')
 
+            self.cursor.execute('''
+                CREATE TABLE IF NOT EXISTS turmas (
+                    id INTEGER PRIMARY KEY, 
+                    turma VARCHAR NOT NULL
+                );
+            ''')
+
+            self.cursor.execute('''
+                CREATE TABLE IF NOT EXISTS estudantes (
+                    id INTEGER PRIMARY KEY, 
+                    nome VARCHAR NOT NULL, 
+                    idade VARCHAR NOT NULL, 
+                    matricula VARCHAR NOT NULL, 
+                    cod_turma INTEGER, 
+                    FOREIGN KEY (cod_turma) REFERENCES turmas(id)
+                );
+            ''')
+
+            self.cursor.execute('''
+                CREATE TABLE IF NOT EXISTS notas (
+                    id INTEGER PRIMARY KEY, 
+                    nota DECIMAL NOT NULL, 
+                    bimestre VARCHAR NOT NULL, 
+                    cod_aluno INTEGER, 
+                    FOREIGN KEY (cod_aluno)REFERENCES estudantes(id)
+                );
+            ''')
+
+            self.cursor.execute('''
+                CREATE TABLE IF NOT EXISTS eventos (
+                    id INTEGER PRIMARY KEY, 
+                    assunto VARCHAR NOT NULL, 
+                    local VARCHAR NOT NULL, 
+                    data VARCHAR NOT NULL,
+                    hora VARCHAR NOT NULL
+                );
+            ''')
+
             self.conn.commit()
         except Exception as e:
             print('erro: ', e)
